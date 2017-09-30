@@ -38,9 +38,32 @@ def _bluetooth_dir_name(section_name):
     return '/'.join(path_parts)
 
 
+def _format_erand(erand):
+    """ Reverse erang and return uppercase."""
+    erand = erand.replace('hex(b):', '')
+    erand_parts = erand.split(',')
+    erand_parts.reverse()
+    hex_str = ''.join(erand_parts)
+    dec = int(hex_str, 16)
+
+    return dec
+
+
+def _format_ediv(ediv):
+    """ Convert ediv to decimal and return."""
+    ediv = ediv.replace('dword:', '')
+    return int(ediv, 16)
+
+
+
 def _format_ltk(ltk):
     """ Convert LTK to uppercase and remove commas."""
     return ltk.lstrip('hex:').upper().replace(',', '')
+
+
+def _format_csrk(csrk):
+    """ Convert CSRK to uppercase and remove commas."""
+    return csrk.replace('hex:', '').replace(',', '').upper()
 
 
 def _process_reg_file(config):
@@ -52,7 +75,14 @@ def _process_reg_file(config):
         print('\n')
         print('Dir Name: /usr/lib/bluetooth/{}'.format(
             _bluetooth_dir_name(section)))
-        print('LongTermKey: {}'.format(_format_ltk(config[section]['LTK'])))
+        print('LongTermKey')
+        print('  Key: {}'.format(_format_ltk(config[section]['LTK'])))
+        print('  EncSize: 16')
+        print('  EDiv: {}'.format(_format_ediv(config[section]['EDIV'])))
+        print('  Rand: {}'.format(_format_erand(config[section]['ERand'])))
+        print('LocalSignatureKey')
+        print('  Key: {}'.format(
+            _format_csrk(config[section]['CSRK'])))
         print('\n====================================\n')
 
 
