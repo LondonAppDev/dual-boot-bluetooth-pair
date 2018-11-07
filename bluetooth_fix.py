@@ -70,7 +70,7 @@ def _process_reg_file(config):
     """ Process the reg file."""
     sections = config.sections()
     for section in sections:
-        if len(config[section]) != 10:
+        if len(section) < 98:
             continue
         print('\n')
         print('Dir Name: /usr/lib/bluetooth/{}'.format(
