@@ -73,7 +73,7 @@ def _process_reg_file(config):
         if len(section) < 98:
             continue
         print('\n')
-        print('Dir Name: /usr/lib/bluetooth/{}'.format(
+        print('Dir Name: /var/lib/bluetooth/{}'.format(
             _bluetooth_dir_name(section)))
         print('LongTermKey')
         print('  Key: {}'.format(_format_ltk(config[section]['LTK'])))
