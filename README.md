@@ -24,10 +24,10 @@ psexec.exe -s -i regedit /e C:\BTKeys.reg HKEY_LOCAL_MACHINE\SYSTEM\ControlSet00
  5. Turn off bluetooth device(s) and boot back into Linux.
  6. Copy the `BTKeys.reg` file to your Linux filesystem.
  7. Run `clean_reg_file.py /path/to/BTKeys.reg keys.reg` to clean the file (converts encoding to UTF8 and strips quotation marks).
- 8. Run `bluetooth_fix.py keys.reg`.
+ 8. Run `bluetooth_fix.py --reg_path keys.reg`.
  9. From a terminal with `sudo`, navigate to `/var/lib/bluetooth/<ADAPTOR_MAC_ADDRESS>/` and use `ls` to get the mac addresses similar to the bluetooth device you are trying to pair, and re-name the directory to the new mac displayed in the output from step 8.
  10. Open `/var/lib/bluetooth/<ADAPTOR_MAC>/<DEVICE_MAC>/info` and modify the values as per output from step 8.
- 11. Restart bluetooth with `sudo /etc/init.d/bluetooth restart`.
+ 11. Restart bluetooth with `sudo systemctl restart bluetooth`.
 
 # Developer Notes
 
