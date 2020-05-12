@@ -31,4 +31,4 @@ psexec.exe -s -i regedit /e C:\BTKeys.reg HKEY_LOCAL_MACHINE\SYSTEM\ControlSet00
 
 # Developer Notes
 
-Contributions to this project are welcome! Feel free to fork and submit pull requests with any improvements.
+I have moved away from using Windows / Linux for my desktop OS so I am no longer maintaining this repo. Feel free to fork and take it over :)
