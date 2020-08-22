@@ -1,5 +1,5 @@
 
->>> I have moved away from using Windows / Linux for my desktop OS so I am no longer maintaining this repo. Feel free to fork and take it over :)
+> I have moved away from using Windows / Linux for my desktop OS so I am no longer maintaining this repo. Feel free to fork and take it over :)
 
 # Dual Boot Bluetooth Pair
 
