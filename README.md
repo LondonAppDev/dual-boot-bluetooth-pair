@@ -1,3 +1,6 @@
+
+>>> I have moved away from using Windows / Linux for my desktop OS so I am no longer maintaining this repo. Feel free to fork and take it over :)
+
 # Dual Boot Bluetooth Pair
 
 This is a tool I use to pair a bluetooth device with my Windows OS and Linux Mint 17 OS on my dual boot laptop.
@@ -29,6 +32,3 @@ psexec.exe -s -i regedit /e C:\BTKeys.reg HKEY_LOCAL_MACHINE\SYSTEM\ControlSet00
  10. Open `/var/lib/bluetooth/<ADAPTOR_MAC>/<DEVICE_MAC>/info` and modify the values as per output from step 8.
  11. Restart bluetooth with `sudo systemctl restart bluetooth`.
 
-# Developer Notes
-
-I have moved away from using Windows / Linux for my desktop OS so I am no longer maintaining this repo. Feel free to fork and take it over :)
